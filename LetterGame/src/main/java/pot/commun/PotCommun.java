@@ -7,22 +7,28 @@ import java.util.ListIterator;
 
 public class PotCommun {
 
-	List<String> listeDesLettres = new ArrayList<String>();
+	private ArrayList<Character> listeDesLettres;
 	
-	public void ajoutLettre(int nbLettre, String lettre){
-		
-		for( int i = 0; i < nbLettre; i++  ){
-			listeDesLettres.add(lettre);
-		}
-		
+	private PotCommun(){
+		this.listeDesLettres = new ArrayList<Character>();
+	}
+	/** Singleton ----------
+	 * On utilise le singleton pour notre pot commun. De manière à ce que le pot commun
+	 * soit instancié une seule et unique fois.	 * 
+	 * */
+	private static class PotCommunHolder {
+		private final static PotCommun instance = new PotCommun();
 	}
 	
-	public void enleverLettre(int nbLettre, List<String> listeAEnlever){
-
-		// remove les lettres de ListLettre présentent dans listeDesLettres
-		
+	public static PotCommun getInstance() {
+		return PotCommunHolder.instance;
 	}
 	
+	
+	public void ajoutLettre( char lettre){
+		this.listeDesLettres.add(lettre);
+	}
+		
 	
 	public static void main(String[] args) {
 	
