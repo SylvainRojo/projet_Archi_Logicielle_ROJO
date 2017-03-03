@@ -51,13 +51,13 @@ public class JoueurHumain extends Joueur {
         Scanner scan = new Scanner(System.in);
         String word = scan.nextLine();
         try {
-            String testedWord = pot.verifDico(word, true);
-            if(testedWord == ""){
+            String testMot = pot.verifDico(word, true);
+            if(testMot == ""){
                 System.out.println("Ce mot n'existe pas :(\n");
             }else {
-                this.mots.add(testedWord);
-                System.out.println("Mot : '" + testedWord + "' bon ! Tire une lettre !\n");
-                this.wordSuccess(testedWord);
+                this.mots.add(testMot);
+                System.out.println("Mot : '" + testMot + "' bon ! Tire une lettre !\n");
+                this.wordSuccess(testMot);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,9 +73,9 @@ public class JoueurHumain extends Joueur {
             words += " ";
         }
         System.out.println("Ton mot : "+words);
-        String wordSelected = this.sc.next();
+        String mSelection = this.sc.next();
 
-        if (!this.mots.contains(wordSelected)) {
+        if (!this.mots.contains(mSelection)) {
             System.out.println("Ce n'est pas ton mot !");
             this.mesMots();
         }
@@ -84,11 +84,11 @@ public class JoueurHumain extends Joueur {
             System.out.println("Choisi une lettre du pot commun pour terminer ton mot :");
             String selection = sc.next();
             if (pot.comparerPotCommun(selection) == true){
-                System.out.println("Essaie avec cette lettre : "+wordSelected);
+                System.out.println("Essaie avec cette lettre : "+mSelection);
                 try {
-                    String createdWord = wordSelected + selection;
-                    System.out.println("Ton mot est : "+createdWord);
-                    String result = pot.verifDico(createdWord, false);
+                    String motC = mSelection + selection;
+                    System.out.println("Ton mot est : "+motC);
+                    String result = pot.verifDico(motC, false);
                     if(result == ""){
                         System.out.println("Ce mot n'est pas dans le dico :(\n");
                     }else {
@@ -114,19 +114,19 @@ public class JoueurHumain extends Joueur {
             words += " ";
         }
         System.out.println("Le mot : "+words);
-        String wordSelected = this.sc.next();
+        String mSelection = this.sc.next();
 
-        if (!this.getmotDeladversaire().contains(wordSelected)) {
+        if (!this.getmotDeladversaire().contains(mSelection)) {
             this.volerMot();
         } else {
             System.out.println("Dans le pot commun :");
-            String lettersSelected = sc.next();
-            if (pot.comparerPotCommun(lettersSelected) == true){
-                System.out.println("Créer ton mot avec : "+wordSelected);
+            String lettreChoisie = sc.next();
+            if (pot.comparerPotCommun(lettreChoisie) == true){
+                System.out.println("Créer ton mot avec : "+mSelection);
                 try {
-                    String createdWord = wordSelected + lettersSelected;
-                    System.out.println("Tu as créé : "+createdWord);
-                    String result = pot.verifDico(createdWord, false);
+                    String motC = mSelection + lettreChoisie;
+                    System.out.println("Tu as créé : "+motC);
+                    String result = pot.verifDico(motC, false);
                     if(result == ""){
                         System.out.println("Ca n'exist pas :(\n");
                     }else {
