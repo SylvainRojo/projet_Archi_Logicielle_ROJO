@@ -1,4 +1,19 @@
 # TP Architecture Logicielle / Inf4043 - 2017 - Jeux de lettres
+### ROJO Sylvain ROJO Martin
+
+
+### Pour lancer le projet ###
+
+> Lancement du projet
+> Lancement du projet
+
+
+### Utilisation de singleton
+
+> Nous avons utilisÈ un singleton pour notre classe potCommun
+> C'est une classe qui ne devra Ítre instanciÈe qu'une seule fois
+> Le singleton nous permet de bien maÓtriser l'unique instance du potCommun
+
 
 - Date de rendu : 12/02/2017 23h - pas de retard accept√©
 - Bin√¥me accept√©
