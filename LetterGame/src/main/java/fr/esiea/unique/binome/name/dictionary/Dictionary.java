@@ -9,6 +9,10 @@ import java.io.InputStreamReader;
 
 public class Dictionary implements IDictionary {
 
+	public Dictionary() {
+		
+	}
+	
     public BufferedReader OpenFile() {
         String file = "src/main/resources/dico.txt";
 

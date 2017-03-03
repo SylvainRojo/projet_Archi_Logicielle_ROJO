@@ -7,19 +7,19 @@ import pot.commun.PotCommun;
 
 
 public abstract class Joueur {
-    protected ArrayList<String> mots;
-    protected PotCommun pot = PotCommun.getInstance();
-    protected Scanner sc = new Scanner(System.in);
-    protected ArrayList<String> motDeladversaire;
+    public ArrayList<String> mots;
+    public PotCommun pot = PotCommun.getInstance();
+    public Scanner sc = new Scanner(System.in);
+    public ArrayList<String> motDeladversaire;
 
-    protected char prendreLettre() {
+    public char prendreLettre() {
         Random rand = new Random();
         char randLetter = (char)(rand.nextInt(26) + 'a');
         return randLetter;
     }
-    abstract int round();
+    public abstract int round();
 
-    void setadvListe(ArrayList<String> advListe){
+    public void setadvListe(ArrayList<String> advListe){
         this.motDeladversaire = advListe;
     }
 

@@ -13,7 +13,7 @@ public class JoueurHumain extends Joueur {
         this.mots = new ArrayList<String>();
     }
 
-    int round() {
+    public int round() {
         System.out.println("A ton tour !");
 
         pot.ajoutLettre(this.prendreLettre());

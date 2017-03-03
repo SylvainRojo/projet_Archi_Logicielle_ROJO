@@ -2,7 +2,7 @@ package pot.commun;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Dictionary;
+//import java.util.Dictionary;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.regex.Pattern;
