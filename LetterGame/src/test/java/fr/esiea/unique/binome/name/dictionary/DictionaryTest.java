@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+
 import static org.junit.Assert.assertFalse;
 
 /**
@@ -19,7 +22,7 @@ public class DictionaryTest {
     }
     
     @Test
-    public void testIsWord() {
+    public void testIsWord() throws IOException {
         assertTrue(dictionary.isWord("maman"));
         assertFalse(dictionary.isWord("namam"));
     }
